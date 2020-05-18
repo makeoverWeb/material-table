@@ -1,2 +1,0 @@
-# material-table
-Begin app

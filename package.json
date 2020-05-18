@@ -6,17 +6,33 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "@material-ui/core": "^4.9.13",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.7",
+    "material-table": "^1.57.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "run-p start:react api",
+    "dev": "run-p start:react api",
     "start:react": "react-scripts start",
     "build": "react-scripts build",
     "test:i": "react-scripts test",
     "eject": "react-scripts eject",
     "api": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
     "test": "cross-env NODE_ENV=testing PORT=6666 tape test/*-test.js ./test/**/*-test.js | tap-spec",
-    "serve": "npm run build && npm run api"
+    "serve": "npm run build && npm run api",
+    "json-server": "json-server --watch db.json --port 8080",
+    "start": "concurrently \"npm run dev\" \"npm run json-server\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +56,8 @@
     "npm-run-all": "^4.1.5",
     "tap-spec": "^5.0.0",
     "tape": "^4.13.2",
-    "tiny-json-http": "^7.2.0"
+    "tiny-json-http": "^7.2.0",
+    "concurrently": "^5.2.0",
+    "json-server": "^0.16.1"
   }
 }

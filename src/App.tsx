@@ -32,7 +32,7 @@ function App() {
     {
       title: "Due Date",
       field: "dueDate",
-      // type: "date" as any,
+      // type: "date" as any
     },
     {
       title: "Status",
